@@ -84,5 +84,6 @@ class JSONTestTests: XCTestCase {
     var game = Game(data: self.jsonObject!)
     XCTAssert(game.players?.count == 2, "Should be 2 players in the game")
     XCTAssert(game.players?[0].username == "JAN", "Player one should be Jan")
+    XCTAssert(game.players?[0].rounds?.count == 1, "Player one should have 1 round")
   }
 }
