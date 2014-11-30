@@ -1,0 +1,9 @@
+language: objective-c
+
+before_install: 
+- brew update
+- if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
+
+script: 
+- xctool clean build -project JSONTest.xcodeproj/  -scheme JSONTest  -sdk iphonesimulator
+- xctool test  -project JSONTest.xcodeproj/  -scheme JSONTest  -sdk iphonesimulator
