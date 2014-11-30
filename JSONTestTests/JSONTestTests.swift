@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 
 class JSONTestTests: XCTestCase {
-
+  
   var jsonObject: [String:AnyObject]?
   
   let gameResponse = [
@@ -22,18 +22,18 @@ class JSONTestTests: XCTestCase {
     "board": ["A","LL","A","C","E", "P"],
     "letterBag": ["F","CC","I","D","N", "M", "I", "O", "S","T","NY"]/*,
     "players": [[
-      "id": 1,
-      "username":"JAN",
-      "rounds": ["words":["HOLA", "OLA"]]],[
-      "id": 3,
-      "username": "MARTA",
-      "rounds": ["words":["MOLA", "HOLA", "OLA"]]],[
-      "id": 2,
-      "username": "SERGI",
-      "rounds": ["words":["HOLA", "OLA"]]]
+    "id": 1,
+    "username":"JAN",
+    "rounds": ["words":["HOLA", "OLA"]]],[
+    "id": 3,
+    "username": "MARTA",
+    "rounds": ["words":["MOLA", "HOLA", "OLA"]]],[
+    "id": 2,
+    "username": "SERGI",
+    "rounds": ["words":["HOLA", "OLA"]]]
     ]*/
   ]
-
+  
   
   let gameJSON = "{\"_id\":\"fefafe\",\"num_players\":2,\"state\":\"WAITING_FOR_PLAYER\",\"current_round\":1,\"used_words\":[\"OCELL\",\"BORINOT\",\"CUA\"],\"board\":[\"A\",\"X\",\"A\",\"O\",\"T\",\"N\"],\"letterBag\":[\"T\",\"A\"],\"players\":[{\"id\":1,\"username\":\"JAN\",\"rounds\":[{\"id\":1,\"words\":[\"OCELL\",\"BORINOT\",\"CUA\"]}]},{\"id\":2,\"username\":\"MARTA\",\"rounds\":[]}]}"
   
@@ -66,22 +66,23 @@ class JSONTestTests: XCTestCase {
     property <<< gameResponse["_id"]
     XCTAssert(property == "fafefa", "Id should be 'fafefa'")
   }
-
+  
   func testCurrentRound() {
     // This is an example of a functional test case.
     var property: Int?
     property <<< gameResponse["current_round"]
     XCTAssert(property == 2, "current_round should be 2")
   }
-
+  
   func testGameInstance() {
     var game = Game(data: self.jsonObject!)
     XCTAssert(game.id == "fefafe", "Id should be 'fefafe'")
   }
-
+  
   
   func testGameInstancePlayers() {
     var game = Game(data: self.jsonObject!)
-    XCTAssert(game.players?.count == 2, "Should should be 2 players")
+    XCTAssert(game.players?.count == 2, "Should be 2 players in the game")
+    XCTAssert(game.players?[0].username == "JAN", "Player one should be Jan")
   }
 }
