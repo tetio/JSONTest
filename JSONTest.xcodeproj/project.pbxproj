@@ -18,6 +18,10 @@
 		3B646E2B1A276D2E00B2DBA9 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B646E2A1A276D2E00B2DBA9 /* JSONHelper.swift */; };
 		3B646E2C1A29CC8F00B2DBA9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B646E261A25B2C600B2DBA9 /* Game.swift */; };
 		3B646E2D1A29CC9200B2DBA9 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B646E2A1A276D2E00B2DBA9 /* JSONHelper.swift */; };
+		3B6665A01A3EBE2900821B39 /* LetterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B66659F1A3EBE2900821B39 /* LetterConfig.swift */; };
+		3B6665A11A3EBE2900821B39 /* LetterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B66659F1A3EBE2900821B39 /* LetterConfig.swift */; };
+		3B6665A31A3EBEC000821B39 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6665A21A3EBEC000821B39 /* Letter.swift */; };
+		3B6665A41A3EBEC000821B39 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6665A21A3EBEC000821B39 /* Letter.swift */; };
 		3BE3AF8C1A29D49E00EF37E1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE3AF8B1A29D49E00EF37E1 /* Player.swift */; };
 		3BE3AF8D1A29D65000EF37E1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE3AF8B1A29D49E00EF37E1 /* Player.swift */; };
 		3BE3AF8F1A29DB0700EF37E1 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE3AF8E1A29DB0700EF37E1 /* Round.swift */; };
@@ -46,6 +50,8 @@
 		3B646E1C1A25B2A200B2DBA9 /* JSONTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTestTests.swift; sourceTree = "<group>"; };
 		3B646E261A25B2C600B2DBA9 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3B646E2A1A276D2E00B2DBA9 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		3B66659F1A3EBE2900821B39 /* LetterConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterConfig.swift; sourceTree = "<group>"; };
+		3B6665A21A3EBEC000821B39 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		3BE3AF8B1A29D49E00EF37E1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3BE3AF8E1A29DB0700EF37E1 /* Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +105,8 @@
 				3B646E2A1A276D2E00B2DBA9 /* JSONHelper.swift */,
 				3BE3AF8B1A29D49E00EF37E1 /* Player.swift */,
 				3BE3AF8E1A29DB0700EF37E1 /* Round.swift */,
+				3B66659F1A3EBE2900821B39 /* LetterConfig.swift */,
+				3B6665A21A3EBEC000821B39 /* Letter.swift */,
 			);
 			path = JSONTest;
 			sourceTree = "<group>";
@@ -234,6 +242,8 @@
 				3BE3AF8C1A29D49E00EF37E1 /* Player.swift in Sources */,
 				3BE3AF8F1A29DB0700EF37E1 /* Round.swift in Sources */,
 				3B646E2B1A276D2E00B2DBA9 /* JSONHelper.swift in Sources */,
+				3B6665A01A3EBE2900821B39 /* LetterConfig.swift in Sources */,
+				3B6665A31A3EBEC000821B39 /* Letter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,9 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6665A41A3EBEC000821B39 /* Letter.swift in Sources */,
 				3BE3AF8D1A29D65000EF37E1 /* Player.swift in Sources */,
 				3B646E2D1A29CC9200B2DBA9 /* JSONHelper.swift in Sources */,
 				3B646E1D1A25B2A200B2DBA9 /* JSONTestTests.swift in Sources */,
+				3B6665A11A3EBE2900821B39 /* LetterConfig.swift in Sources */,
 				3B3463F91A29E54F006C0133 /* Round.swift in Sources */,
 				3B646E2C1A29CC8F00B2DBA9 /* Game.swift in Sources */,
 			);
