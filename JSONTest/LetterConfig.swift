@@ -15,19 +15,21 @@ class LetterConfig: Deserializable {
   required init(data: [String: AnyObject]) {
     var lettersTmp = [Letter]()
     lettersTmp <<<<* data["letters"]
-/*
     letters = lettersTmp.reduce([:]) {
-      $0[$1.letter] = $1
-      return $0
+      (var dict:Dictionary, e:Letter) in
+        if let key = e.letter {
+          dict[key] = e
+        }
+      return dict
     }
-*/
-    letters = toDictionary(lettersTmp) {($0.letter!, $0)}
+//    letters = toDictionary(lettersTmp) {($0.letter!, $0)}
     language <<< data["_id"]
   }
   
   
   init() {}
-  
+
+  // A nice generics example ;)
   func toDictionary<E, K, V>(
     array:       [E],
     transformer: (element: E) -> (key: K, value: V)?)
