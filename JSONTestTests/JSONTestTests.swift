@@ -13,6 +13,7 @@ class JSONTestTests: XCTestCase {
   
   var jsonObject: [String:AnyObject]?
   var jsonObject1: [String:AnyObject]?
+  var jsonObject2: [String:AnyObject]?
   var jsonLetterConfig: [String:AnyObject]?
   
   let gameResponse = [
@@ -43,6 +44,8 @@ class JSONTestTests: XCTestCase {
   
   let gameJSON = "{\"_id\":\"fefafe\",\"num_players\":2,\"state\":\"WAITING_FOR_PLAYER\",\"current_round\":1,\"used_words\":[\"OCELL\",\"BORINOT\",\"CUA\"],\"board\":[\"A\",\"X\",\"A\",\"O\",\"T\",\"N\"],\"letterBag\":[\"T\",\"A\"],\"players\":[{\"id\":1,\"username\":\"JAN\",\"rounds\":[{\"id\":1,\"words\":[\"OCELL\",\"BORINOT\",\"CUA\"]}]},{\"id\":2,\"username\":\"MARTA\",\"rounds\":[]}]}"
   
+  let gameJson3 = "{\"_id\": \"549a693e7e7123d9170223ab\",\"language\": \"CA\",\"num_players\": 1,\"max_players\": 2,\"state\": \"CREATED\",\"current_round\": 1,\"board\": [\"Q\",\"I\",\"M\",\"S\",\"U\",\"S\",\"Z\",\"T\",\"A\",\"E\",\"M\",\"A\",\"E\",\"E\",\"T\",\"S\"],\"seed\": 546,\"used_words\": [],\"doc\": 1419418668.016,\"players\": [{\"id\": 0,\"username\": \"gigo\",\"rounds\": []}]}"
+  
   
   override func setUp() {
     super.setUp()
@@ -66,6 +69,13 @@ class JSONTestTests: XCTestCase {
     if error == nil {
       if let jsonObjTmp = jsonObjTmp as? [String:AnyObject] {
         self.jsonLetterConfig = jsonObjTmp
+      }
+    }
+
+    jsonObjTmp = NSJSONSerialization.JSONObjectWithData((gameJson3 as NSString).dataUsingEncoding(NSUTF8StringEncoding)!, options: NSJSONReadingOptions(0), error: &error)
+    if error == nil {
+      if let jsonObjTmp = jsonObjTmp as? [String:AnyObject] {
+        self.jsonObject2 = jsonObjTmp
       }
     }
     
@@ -116,6 +126,19 @@ class JSONTestTests: XCTestCase {
     XCTAssert(game.players?[0].username == "gigo", "Player one should be gigo")
   }
 
+  func testGameInstanceDoc() {
+    var game = Game(data: self.jsonObject2!)
+    var now = NSDate()
+    XCTAssert(now.timeIntervalSince1970 >  game.doc?.timeIntervalSince1970, "Should be now > doc")
+  }
+  
+  
+  func testGameInstanceBoard1() {
+    var game = Game(data: self.jsonObject2!)
+    XCTAssert(game.board?.count > 1, "Should be a board in the game")
+    XCTAssert(game.board?[3] == "S", "Board third element should be O")
+  }
+  
   func testLetterConfig1() {
     var letterConf = LetterConfig(data: self.jsonLetterConfig!)
     XCTAssert(letterConf.letters?.count > 0, "There should be letters")

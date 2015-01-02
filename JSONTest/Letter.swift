@@ -19,7 +19,6 @@ class Letter: Deserializable {
     letter <<< data["letter"]
     value <<< data["value"]
     quantity <<< data["quantity"]
-    
   }
   
   init() {}
