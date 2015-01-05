@@ -8,15 +8,16 @@
 
 import UIKit
 import Foundation
+import Alamofire
 
 class ViewController: UIViewController {
   
-  var game: Game?
+  var game: Game!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    fetchGameData("fefafe")
+    fetchGameData("54aaa37aa85345feb0995517")
     
     
     
@@ -30,9 +31,11 @@ class ViewController: UIViewController {
   
   private func fetchGameData(game: String) {
     
-    let urlString = "http://localhost:8080/games/\(game)"
+    let urlString = "http://localhost:8080/game/\(game)"
     let url = NSURL(string: urlString)!
     println("Requesting from escriva: \(url)")
+    
+/*
     let request = NSURLRequest(URL: url)
     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
       (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
@@ -55,6 +58,18 @@ class ViewController: UIViewController {
       } else {
         println("fetchGameData: Error found while extracting JSON data.")
       }
+    }
+    */
+    
+    
+    Alamofire.request(.GET, urlString, parameters: ["test":1])
+      .responseJSON{(request, response, json, error) in
+        if (error != nil) {
+          println("Error: \(error)")
+        } else {
+          self.game = Game(data: json as [String:AnyObject])
+          println("Game created OK:\(self.game.id) State :\(self.game.state)")
+        }
     }
   }
 }
