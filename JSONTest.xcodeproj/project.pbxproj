@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1F9C9C1A5AEB1F0087C9B6 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1F9C951A5ACECC0087C9B6 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B3463F91A29E54F006C0133 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE3AF8E1A29DB0700EF37E1 /* Round.swift */; };
 		3B646E071A25B2A200B2DBA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B646E061A25B2A200B2DBA9 /* AppDelegate.swift */; };
 		3B646E091A25B2A200B2DBA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B646E081A25B2A200B2DBA9 /* ViewController.swift */; };
@@ -57,6 +58,20 @@
 			remoteInfo = JSONTest;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B1F9C9A1A5AEADF0087C9B6 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3B1F9C9C1A5AEB1F0087C9B6 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3B1F9C8F1A5ACECC0087C9B6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
@@ -178,6 +193,7 @@
 				3B646DFD1A25B2A200B2DBA9 /* Sources */,
 				3B646DFE1A25B2A200B2DBA9 /* Frameworks */,
 				3B646DFF1A25B2A200B2DBA9 /* Resources */,
+				3B1F9C9A1A5AEADF0087C9B6 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);

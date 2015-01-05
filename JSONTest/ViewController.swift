@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         println("fetchGameData: Error found while extracting JSON data.")
       }
     }
-    */
+
     
     
     Alamofire.request(.GET, urlString, parameters: ["test":1])
@@ -71,6 +71,7 @@ class ViewController: UIViewController {
           println("Game created OK:\(self.game.id) State :\(self.game.state)")
         }
     }
+*/
   }
 }
 
